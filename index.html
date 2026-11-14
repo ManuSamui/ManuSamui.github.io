@@ -51,6 +51,20 @@
   .ic{font-size:24px;width:32px;text-align:center;flex-shrink:0}
   .t{font-weight:600;font-size:16px}
   .d{font-size:12.5px;color:var(--muted);margin-top:2px}
+  details.bio{margin-top:13px;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:16px;text-align:left;overflow:hidden}
+  details.bio summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:15px 18px}
+  details.bio summary::-webkit-details-marker{display:none}
+  details.bio summary .chev{margin-left:auto;color:var(--gold);transition:transform .2s}
+  details.bio[open] summary .chev{transform:rotate(90deg)}
+  .biotext{padding:0 18px 18px;font-size:14px;line-height:1.6;color:var(--text)}
+  .biotext p{margin-top:10px}
+  .biotext strong{color:var(--gold2)}
+  .sec{font-family:'Cinzel',serif;font-size:13px;letter-spacing:.22em;color:var(--gold);margin:30px 0 12px}
+  .vid{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#000;margin-bottom:13px}
+  .vid video{display:block;width:100%;height:auto;aspect-ratio:9/16;max-height:70vh;object-fit:contain;background:#000}
+  .vcap{font-size:12.5px;color:var(--muted);padding:10px 14px;text-align:left;background:rgba(255,255,255,.03)}
+  .vcap strong{color:var(--gold2);font-weight:600}
+  .note{font-size:11px;color:var(--muted);margin-top:10px;opacity:.85}
   .social{display:flex;justify-content:center;gap:14px;margin:30px 0 22px}
   .social a{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;transition:.15s}
   .social a:hover{border-color:var(--gold);background:rgba(212,168,75,.1)}
@@ -78,9 +92,7 @@
     </defs>
     <g clip-path="url(#above)">
       <circle cx="80" cy="88" r="26" fill="url(#g)"/>
-      <g id="rays">
-        <!-- 9 bougies en éventail -->
-      </g>
+      <g id="rays"></g>
     </g>
     <line x1="14" y1="88" x2="146" y2="88" stroke="url(#g)" stroke-width="2.4" stroke-linecap="round"/>
     <line x1="40" y1="96" x2="120" y2="96" stroke="url(#g)" stroke-width="1.4" stroke-linecap="round" opacity=".6"/>
@@ -107,6 +119,54 @@
       <div class="d"><span class="fr">Réponse personnelle sur WhatsApp</span><span class="en">Personal reply on WhatsApp</span></div></span>
     </a>
   </div>
+
+  <details class="bio">
+    <summary>
+      <span class="ic">👤</span>
+      <span><div class="t"><span class="fr">Qui suis-je ?</span><span class="en">Who am I?</span></div>
+      <div class="d">Emmanuel Barbe · trader</div></span>
+      <span class="chev">›</span>
+    </summary>
+    <div class="biotext">
+      <div class="fr">
+        <p><strong>Emmanuel Barbe, 48 ans, trader.</strong> Installé en Thaïlande depuis 12 ans, papa de 3 enfants.</p>
+        <p>En mars 2020, j'ai fondé <strong>CryptoFeel</strong> : d'abord un canal Telegram, puis un site et une académie blockchain complète, une véritable école de finance alternative.</p>
+        <p>J'ai ensuite été trader prestataire pour plusieurs sociétés : <strong>Futures</strong> (2021–2025), <strong>iGenius</strong> (filiale de l'américain Investview) et <strong>The Investor</strong>. J'étais au trading, jamais à la direction.</p>
+        <p>Ma spécialité d'origine : <strong>accumuler du Bitcoin en tradant les altcoins face à lui</strong>, en spot sur Binance. Je me suis ensuite diversifié vers la <strong>bourse</strong> (mon portefeuille actions est public sur Moning), puis vers les <strong>CFD, l'or et les indices</strong>. Mon terrain de jeu : toute la pyramide de l'investissement, de l'immobilier jusqu'aux cryptos.</p>
+        <p>Aujourd'hui, avec <strong>First Light</strong>, je reviens à l'essentiel : chaque matin, mon analyse et tous mes trades publiés, gagnants comme perdants.</p>
+      </div>
+      <div class="en">
+        <p><strong>Emmanuel Barbe, 48, trader.</strong> Based in Thailand for 12 years, father of 3.</p>
+        <p>In March 2020 I founded <strong>CryptoFeel</strong>: first a Telegram channel, then a website and a full blockchain academy, a true school of alternative finance.</p>
+        <p>I then worked as a contract trader for several companies: <strong>Futures</strong> (2021–2025), <strong>iGenius</strong> (a subsidiary of US-based Investview) and <strong>The Investor</strong>. I was on the trading side, never in management.</p>
+        <p>My original specialty: <strong>accumulating Bitcoin by trading altcoins against it</strong>, spot on Binance. I then expanded into the <strong>stock market</strong> (my equity portfolio is public on Moning), then <strong>CFDs, gold and indices</strong>. My playing field: the whole investment pyramid, from real estate up to crypto.</p>
+        <p>Today, with <strong>First Light</strong>, I'm back to basics: every morning, my analysis and every trade published, wins and losses alike.</p>
+      </div>
+    </div>
+  </details>
+  <div class="links" style="margin-top:13px">
+    <a class="btn" href="https://moning.co/fr/emmanuel-barbe/manu-samui" target="_blank" rel="noopener">
+      <span class="ic">📈</span>
+      <span><div class="t"><span class="fr">Mon portefeuille bourse en direct</span><span class="en">My live stock portfolio</span></div>
+      <div class="d"><span class="fr">Public et consultable sur Moning</span><span class="en">Public and viewable on Moning</span></div></span>
+    </a>
+  </div>
+
+  <div class="sec"><span class="fr">L'ADN DE FIRST LIGHT</span><span class="en">THE FIRST LIGHT DNA</span></div>
+  <div class="vid">
+    <video id="lpe" controls playsinline preload="metadata" poster="poster-fr.jpg">
+      <source src="learn-practice-earn-fr.mp4" type="video/mp4">
+    </video>
+    <div class="vcap"><strong>Learn · Practice · Earn</strong> — <span class="fr">apprendre, pratiquer, puis gagner. Dans cet ordre.</span><span class="en">learn, practice, then earn. In that order.</span></div>
+  </div>
+  <div class="links">
+    <a class="btn" href="https://youtu.be/ZWGrvjwfFz4" target="_blank" rel="noopener">
+      <span class="ic">🌅</span>
+      <span><div class="t"><span class="fr">Le podcast complet à Dubaï</span><span class="en">The full podcast in Dubai</span></div>
+      <div class="d"><span class="fr">Trading, mental et spiritualité · Zero to Hero</span><span class="en">Trading, mindset and spirituality · Zero to Hero</span></div></span>
+    </a>
+  </div>
+  <p class="note"><span class="fr">Les performances passées ne préjugent pas des performances futures.</span><span class="en">Past performance is not indicative of future results.</span></p>
 
   <div class="social">
     <a data-link="tiktok" href="#" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.7V9a7.3 7.3 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg></a>
@@ -161,10 +221,20 @@ document.querySelectorAll('[data-link]').forEach(a=>{
   }
 })();
 
+// Vidéo Learn · Practice · Earn : version FR ou EN selon la langue
+function setVideo(l){
+  const v=document.getElementById('lpe'); if(!v) return;
+  const src='learn-practice-earn-'+l+'.mp4';
+  if(v.querySelector('source').getAttribute('src')===src) return;
+  v.pause(); v.querySelector('source').setAttribute('src',src);
+  v.setAttribute('poster','poster-'+l+'.jpg'); v.load();
+}
+
 function setLang(l){
   document.body.dataset.lang=l; document.documentElement.lang=l;
   document.getElementById('bfr').classList.toggle('on',l==='fr');
   document.getElementById('ben').classList.toggle('on',l==='en');
+  setVideo(l);
   try{localStorage.setItem('fl-lang',l)}catch(e){}
 }
 (function(){
