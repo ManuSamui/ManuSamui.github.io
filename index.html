@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>First Light · Gold & Indices</title>
+<meta name="description" content="First Light — Le marché, avant votre réveil. Briefs quotidiens, trades à livre ouvert, outils de gestion du risque.">
+<meta property="og:title" content="First Light · Gold & Indices">
+<meta property="og:description" content="Le marché, avant votre réveil · The market, before you wake up">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#070D1A; --navy2:#0E1830; --gold:#D4A84B; --gold2:#F2D27A;
+    --text:#EDE6D6; --muted:#9AA3B5; --line:rgba(212,168,75,.28);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{min-height:100%}
+  body{
+    font-family:'Inter',system-ui,sans-serif;color:var(--text);
+    background:
+      radial-gradient(ellipse 90% 55% at 50% 0%, rgba(212,168,75,.22), transparent 60%),
+      radial-gradient(ellipse 70% 40% at 50% 100%, rgba(30,60,120,.35), transparent 70%),
+      linear-gradient(180deg,var(--navy2),var(--navy));
+    background-attachment:fixed;
+    display:flex;justify-content:center;padding:28px 18px 40px;
+  }
+  .wrap{width:100%;max-width:440px;text-align:center}
+  .lang{display:flex;justify-content:flex-end;gap:6px;margin-bottom:8px}
+  .lang button{
+    background:transparent;border:1px solid var(--line);color:var(--muted);
+    font:600 12px 'Inter';letter-spacing:.08em;padding:6px 11px;border-radius:999px;cursor:pointer
+  }
+  .lang button.on{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+  .logo{width:150px;height:auto;margin:6px auto 4px;display:block;filter:drop-shadow(0 0 22px rgba(212,168,75,.35))}
+  h1{font-family:'Cinzel',serif;font-weight:700;font-size:34px;letter-spacing:.14em;
+     background:linear-gradient(180deg,var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{font-size:12px;letter-spacing:.32em;color:var(--gold);margin-top:4px;text-transform:uppercase}
+  .slogan{font-style:italic;color:var(--text);opacity:.9;margin:16px 0 26px;font-size:15px}
+  .links{display:flex;flex-direction:column;gap:13px}
+  a.btn{
+    display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--text);
+    background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:16px;
+    padding:15px 18px;text-align:left;transition:transform .15s, border-color .15s, background .15s;
+  }
+  a.btn:hover{transform:translateY(-2px);border-color:var(--gold);background:rgba(212,168,75,.08)}
+  a.btn.main{background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--navy);border:none;
+     box-shadow:0 8px 28px rgba(212,168,75,.3)}
+  a.btn.main .d{color:rgba(7,13,26,.72)}
+  .ic{font-size:24px;width:32px;text-align:center;flex-shrink:0}
+  .t{font-weight:600;font-size:16px}
+  .d{font-size:12.5px;color:var(--muted);margin-top:2px}
+  .social{display:flex;justify-content:center;gap:14px;margin:30px 0 22px}
+  .social a{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;transition:.15s}
+  .social a:hover{border-color:var(--gold);background:rgba(212,168,75,.1)}
+  .social svg{width:20px;height:20px;fill:var(--gold)}
+  .disc{font-size:11px;color:var(--muted);line-height:1.5;opacity:.8;max-width:360px;margin:0 auto}
+  .copy{font-size:11px;color:var(--muted);margin-top:10px;opacity:.6}
+  [data-lang="en"] .fr, [data-lang="fr"] .en{display:none}
+</style>
+</head>
+<body data-lang="fr">
+<div class="wrap">
+
+  <div class="lang">
+    <button id="bfr" class="on" onclick="setLang('fr')">FR</button>
+    <button id="ben" onclick="setLang('en')">EN</button>
+  </div>
+
+  <!-- Logo : soleil levant aux rayons en bougies japonaises -->
+  <svg class="logo" viewBox="0 0 160 104" xmlns="http://www.w3.org/2000/svg" aria-label="First Light">
+    <defs>
+      <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#F2D27A"/><stop offset="1" stop-color="#C8962F"/>
+      </linearGradient>
+      <clipPath id="above"><rect x="0" y="0" width="160" height="88"/></clipPath>
+    </defs>
+    <g clip-path="url(#above)">
+      <circle cx="80" cy="88" r="26" fill="url(#g)"/>
+      <g id="rays">
+        <!-- 9 bougies en éventail -->
+      </g>
+    </g>
+    <line x1="14" y1="88" x2="146" y2="88" stroke="url(#g)" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="40" y1="96" x2="120" y2="96" stroke="url(#g)" stroke-width="1.4" stroke-linecap="round" opacity=".6"/>
+  </svg>
+
+  <h1>FIRST LIGHT</h1>
+  <div class="sub">Gold &amp; Indices</div>
+  <p class="slogan"><span class="fr">« Le marché, avant votre réveil »</span><span class="en">“The market, before you wake up”</span></p>
+
+  <div class="links">
+    <a class="btn main" data-link="telegram" href="#" target="_blank" rel="noopener">
+      <span class="ic">☀️</span>
+      <span><div class="t"><span class="fr">Rejoindre First Light</span><span class="en">Join First Light</span></div>
+      <div class="d"><span class="fr">Le brief chaque matin · Or, indices, Bitcoin, pétrole</span><span class="en">Daily morning brief · Gold, indices, Bitcoin, oil</span></div></span>
+    </a>
+    <a class="btn" data-link="bookouvert" href="#" target="_blank" rel="noopener">
+      <span class="ic">📖</span>
+      <span><div class="t">Book Ouvert</div>
+      <div class="d"><span class="fr">Nos trades, à livre ouvert · gagnants comme perdants</span><span class="en">Our trades, open book · wins and losses alike</span></div></span>
+    </a>
+    <a class="btn" data-link="whatsapp" href="#" target="_blank" rel="noopener">
+      <span class="ic">💬</span>
+      <span><div class="t"><span class="fr">Une question ? Écrivez-moi</span><span class="en">Questions? Message me</span></div>
+      <div class="d"><span class="fr">Réponse personnelle sur WhatsApp</span><span class="en">Personal reply on WhatsApp</span></div></span>
+    </a>
+  </div>
+
+  <div class="social">
+    <a data-link="tiktok" href="#" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.7V9a7.3 7.3 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg></a>
+    <a data-link="x" href="#" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><path d="M17.8 3h3.1l-6.8 7.7 8 10.3h-6.3l-4.9-6.4L5.3 21H2.2l7.3-8.3L1.9 3h6.4l4.4 5.8L17.8 3zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5z"/></svg></a>
+    <a data-link="instagram" href="#" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm6-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM21.9 8c-.1-1.6-.4-3-1.6-4.2S17.6 2.2 16 2.1C14.4 2 9.6 2 8 2.1 6.4 2.2 5 2.6 3.8 3.8S2.2 6.4 2.1 8C2 9.6 2 14.4 2.1 16c.1 1.6.4 3 1.6 4.2s2.6 1.5 4.2 1.6c1.6.1 6.4.1 8 0 1.6-.1 3-.4 4.2-1.6s1.5-2.6 1.6-4.2c.1-1.6.1-6.4.2-8zm-2.1 9.7a3.3 3.3 0 0 1-1.8 1.8c-1.3.5-4.3.4-5.7.4s-4.4.1-5.7-.4a3.3 3.3 0 0 1-1.8-1.8c-.5-1.3-.4-4.3-.4-5.7s-.1-4.4.4-5.7A3.3 3.3 0 0 1 6.6 4.5c1.3-.5 4.3-.4 5.7-.4s4.4-.1 5.7.4a3.3 3.3 0 0 1 1.8 1.8c.5 1.3.4 4.3.4 5.7s.1 4.4-.4 5.7z"/></svg></a>
+    <a data-link="telegram" href="#" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M21.4 4.1 2.9 11.2c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.4l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.5zM8.9 13.9l8.9-5.6c.4-.3.8-.1.5.2l-7.6 6.9-.3 3.2-1.5-4.7z"/></svg></a>
+  </div>
+
+  <p class="disc">
+    <span class="fr">Le trading comporte un risque de perte en capital. Contenu éducatif et informatif, ne constituant pas un conseil en investissement.</span>
+    <span class="en">Trading involves a risk of capital loss. Educational and informational content only, not investment advice.</span>
+  </p>
+  <p class="copy">© First Light</p>
+</div>
+
+<script>
+/* ===== VOS LIENS — à compléter ===== */
+const LINKS = {
+  telegram:   "https://t.me/FirstLightTrading",
+  bookouvert: "https://t.me/FirstLightBook",
+  whatsapp:   "https://wa.me/66612017290",
+  tiktok:     "https://www.tiktok.com/@trader.horizons",
+  x:          "https://x.com/BarbeEmmanuel",
+  instagram:  "https://www.instagram.com/emmanuel.barbe/"
+};
+/* =================================== */
+
+document.querySelectorAll('[data-link]').forEach(a=>{
+  const url = LINKS[a.dataset.link];
+  if(url){ a.href = url; } else { a.style.opacity = .35; a.removeAttribute('target'); }
+});
+
+// Bougies en éventail autour du soleil
+(function(){
+  const g = document.getElementById('rays'), ns='http://www.w3.org/2000/svg';
+  const heights=[12,17,14,21,25,21,14,17,12];
+  for(let i=0;i<9;i++){
+    const ang = -80 + i*20, h = heights[i], r0 = 33;
+    const grp = document.createElementNS(ns,'g');
+    grp.setAttribute('transform',`rotate(${ang} 80 88)`);
+    const wick = document.createElementNS(ns,'line');
+    wick.setAttribute('x1',80); wick.setAttribute('x2',80);
+    wick.setAttribute('y1',88-r0+2); wick.setAttribute('y2',88-r0-h-6);
+    wick.setAttribute('stroke-width',1.6); wick.setAttribute('stroke','#E3B85A');
+    const body = document.createElementNS(ns,'rect');
+    body.setAttribute('x',76.5); body.setAttribute('width',7);
+    body.setAttribute('y',88-r0-h-1); body.setAttribute('height',h-2);
+    body.setAttribute('rx',1);
+    body.setAttribute('fill','#E3B85A');
+    if(i%3===1){ body.setAttribute('fill','#0E1830'); body.setAttribute('stroke','#E3B85A'); body.setAttribute('stroke-width',1.5); }
+    grp.appendChild(wick); grp.appendChild(body); g.appendChild(grp);
+  }
+})();
+
+function setLang(l){
+  document.body.dataset.lang=l; document.documentElement.lang=l;
+  document.getElementById('bfr').classList.toggle('on',l==='fr');
+  document.getElementById('ben').classList.toggle('on',l==='en');
+  try{localStorage.setItem('fl-lang',l)}catch(e){}
+}
+(function(){
+  let l=null; try{l=localStorage.getItem('fl-lang')}catch(e){}
+  if(!l) l=(navigator.language||'fr').toLowerCase().startsWith('fr')?'fr':'en';
+  setLang(l);
+})();
+</script>
+</body>
+</html>
