@@ -9,7 +9,7 @@
 <meta property="og:description" content="Le marché, avant votre réveil · The market, before you wake up">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy:#070D1A; --navy2:#0E1830; --gold:#D4A84B; --gold2:#F2D27A;
@@ -100,7 +100,8 @@
 
   .disc{font-size:11.5px;color:var(--muted);text-align:center;max-width:620px;margin:34px auto 0;opacity:.8}
   .copy{font-size:11px;color:var(--muted);text-align:center;margin-top:10px;opacity:.6}
-  [data-lang="en"] .fr, [data-lang="fr"] .en{display:none}
+  body:not([data-lang="fr"]) .fr, body:not([data-lang="en"]) .en, body:not([data-lang="th"]) .th{display:none}
+  body[data-lang="th"]{font-family:'Inter','Sarabun','Noto Sans Thai',system-ui,sans-serif}
 </style>
 </head>
 <body data-lang="fr">
@@ -111,6 +112,7 @@
     <div class="lang">
       <button id="bfr" class="on" onclick="setLang('fr')">FR</button>
       <button id="ben" onclick="setLang('en')">EN</button>
+      <button id="bth" onclick="setLang('th')">TH</button>
     </div>
   </div>
 
@@ -129,110 +131,110 @@
     </svg>
     <h1>FIRST LIGHT</h1>
     <div class="pill">PREMIUM</div>
-    <p class="slogan"><span class="fr">« Le marché, avant votre réveil »</span><span class="en">“The market, before you wake up”</span></p>
+    <p class="slogan"><span class="fr">« Le marché, avant votre réveil »</span><span class="en">“The market, before you wake up”</span><span class="th">“ตลาด ก่อนคุณตื่นนอน”</span></p>
     <p class="lead">
       <span class="fr">Chaque matin, le plan de la journée. Pendant la séance, des calls précis. Le soir, les résultats publiés à livre ouvert. Et les outils pour suivre tout ça sans brûler votre compte.</span>
-      <span class="en">Every morning, the day's plan. During the session, precise calls. Afterwards, every result published, open book. Plus the tools to follow it all without blowing your account.</span>
+      <span class="en">Every morning, the day's plan. During the session, precise calls. Afterwards, every result published, open book. Plus the tools to follow it all without blowing your account.</span><span class="th">ทุกเช้า แผนการเทรดของวัน ระหว่างวัน สัญญาณเทรดที่ชัดเจน หลังจากนั้น ผลทุกออเดอร์เปิดเผยแบบโปร่งใส พร้อมเครื่องมือที่ช่วยให้คุณเทรดตามได้โดยไม่ทำให้พอร์ตพัง</span>
     </p>
     <div class="cta">
-      <a class="btn main" data-link="contact" href="#" target="_blank" rel="noopener">☀️ <span class="fr">Je veux rejoindre Premium</span><span class="en">I want to join Premium</span></a>
-      <a class="btn ghost" href="#offre">↓ <span class="fr">Ce qui est inclus</span><span class="en">What's included</span></a>
+      <a class="btn main" data-link="contact" href="#" target="_blank" rel="noopener">☀️ <span class="fr">Je veux rejoindre Premium</span><span class="en">I want to join Premium</span><span class="th">ฉันอยากเข้าร่วม Premium</span></a>
+      <a class="btn ghost" href="#offre">↓ <span class="fr">Ce qui est inclus</span><span class="en">What's included</span><span class="th">สิ่งที่คุณจะได้รับ</span></a>
     </div>
-    <div class="assets"><span>Gold · XAU/USD</span><span>Nasdaq</span><span>Dow Jones</span><span>Bitcoin</span><span><span class="fr">Pétrole</span><span class="en">Oil</span></span></div>
+    <div class="assets"><span>Gold · XAU/USD</span><span>Nasdaq</span><span>Dow Jones</span><span>Bitcoin</span><span><span class="fr">Pétrole</span><span class="en">Oil</span><span class="th">น้ำมัน</span></span></div>
   </header>
 
   <!-- OFFRE -->
   <section id="offre">
-    <div class="kicker"><span class="fr">CE QUE VOUS RECEVEZ</span><span class="en">WHAT YOU GET</span></div>
-    <h2><span class="fr">Une méthode complète, pas juste des signaux</span><span class="en">A complete method, not just signals</span></h2>
+    <div class="kicker"><span class="fr">CE QUE VOUS RECEVEZ</span><span class="en">WHAT YOU GET</span><span class="th">สิ่งที่คุณจะได้รับ</span></div>
+    <h2><span class="fr">Une méthode complète, pas juste des signaux</span><span class="en">A complete method, not just signals</span><span class="th">วิธีการเทรดที่ครบวงจร ไม่ใช่แค่สัญญาณ</span></h2>
     <div class="grid">
       <div class="card"><div class="ic">🌅</div>
-        <h3><span class="fr">Le brief du matin</span><span class="en">The morning brief</span></h3>
+        <h3><span class="fr">Le brief du matin</span><span class="en">The morning brief</span><span class="th">บทวิเคราะห์ยามเช้า</span></h3>
         <p><span class="fr">Chaque jour avant l'ouverture de Londres : contexte macro, agenda économique et niveaux clés sur l'or, les indices, le Bitcoin et le pétrole. En vocal + PDF, en français et en anglais.</span>
-        <span class="en">Every day before the London open: macro context, economic calendar and key levels on gold, indices, Bitcoin and oil. Voice note + PDF, in French and English.</span></p></div>
+        <span class="en">Every day before the London open: macro context, economic calendar and key levels on gold, indices, Bitcoin and oil. Voice note + PDF, in French and English.</span><span class="th">ทุกวันก่อนตลาดลอนดอนเปิด: ภาพรวมเศรษฐกิจ ปฏิทินข่าว และระดับราคาสำคัญของทองคำ ดัชนี Bitcoin และน้ำมัน ในรูปแบบข้อความเสียง + PDF ภาษาฝรั่งเศสและอังกฤษ</span></p></div>
       <div class="card"><div class="ic">🎯</div>
-        <h3><span class="fr">Les calls signés</span><span class="en">Signed calls</span><span class="tag">#FL</span></h3>
+        <h3><span class="fr">Les calls signés</span><span class="en">Signed calls</span><span class="th">สัญญาณเทรดที่มีลายเซ็น</span><span class="tag">#FL</span></h3>
         <p><span class="fr">Entrée, stop loss, TP1 et TP2, en ordres limites pour ceux qui ne sont pas devant l'écran. Chaque call est numéroté et suivi jusqu'à sa clôture.</span>
-        <span class="en">Entry, stop loss, TP1 and TP2, as limit orders for those who can't watch the screen. Every call is numbered and tracked until it closes.</span></p></div>
+        <span class="en">Entry, stop loss, TP1 and TP2, as limit orders for those who can't watch the screen. Every call is numbered and tracked until it closes.</span><span class="th">จุดเข้า Stop Loss, TP1 และ TP2 เป็นคำสั่งแบบ Limit สำหรับคนที่ไม่สามารถเฝ้าหน้าจอได้ ทุกสัญญาณมีหมายเลขและติดตามจนปิดออเดอร์</span></p></div>
       <div class="card"><div class="ic">📍</div>
         <h3>FL Zones<span class="tag">TradingView</span></h3>
         <p><span class="fr">Mon indicateur maison : zones de liquidité, supports et résistances répétés, stops et objectifs basés sur la volatilité. Ce que je regarde, vous le voyez.</span>
-        <span class="en">My in-house indicator: liquidity zones, repeated support and resistance, volatility-based stops and targets. What I watch, you see.</span></p></div>
+        <span class="en">My in-house indicator: liquidity zones, repeated support and resistance, volatility-based stops and targets. What I watch, you see.</span><span class="th">อินดิเคเตอร์ที่พัฒนาเอง: โซนสภาพคล่อง แนวรับแนวต้านที่ถูกทดสอบซ้ำ Stop และเป้าหมายตามความผันผวน สิ่งที่ผมดู คุณก็เห็นเช่นกัน</span></p></div>
       <div class="card"><div class="ic">🧮</div>
-        <h3><span class="fr">Le bot calculateur</span><span class="en">The calculator bot</span></h3>
+        <h3><span class="fr">Le bot calculateur</span><span class="en">The calculator bot</span><span class="th">บอทคำนวณขนาดล็อต</span></h3>
         <p><span class="fr">Vous entrez votre capital et votre risque, il vous donne la bonne taille de position sur chaque actif, avec une alerte quand le stop est trop serré. Idéal en prop firm.</span>
-        <span class="en">Enter your capital and risk, it gives you the right position size on every asset, with a warning when the stop is too tight. Ideal for prop firm accounts.</span></p></div>
+        <span class="en">Enter your capital and risk, it gives you the right position size on every asset, with a warning when the stop is too tight. Ideal for prop firm accounts.</span><span class="th">ใส่เงินทุนและความเสี่ยงของคุณ บอทจะคำนวณขนาดล็อตที่เหมาะสมให้ทุกสินทรัพย์ พร้อมแจ้งเตือนเมื่อ Stop แคบเกินไป เหมาะมากสำหรับบัญชี Prop Firm</span></p></div>
       <div class="card"><div class="ic">🔴</div>
-        <h3><span class="fr">Les lives scalping</span><span class="en">Live scalping sessions</span></h3>
+        <h3><span class="fr">Les lives scalping</span><span class="en">Live scalping sessions</span><span class="th">ไลฟ์เทรดสด Scalping</span></h3>
         <p><span class="fr">1 à 2 fois par semaine, je trade en direct en partage d'écran, juste avant l'ouverture américaine (vers 13h30 heure de Paris).</span>
-        <span class="en">Once or twice a week, I trade live with screen sharing, right before the US open (around 19:30 Bangkok time).</span></p></div>
+        <span class="en">Once or twice a week, I trade live with screen sharing, right before the US open (around 19:30 Bangkok time).</span><span class="th">สัปดาห์ละ 1–2 ครั้ง ผมเทรดสดพร้อมแชร์หน้าจอ ก่อนตลาดอเมริกาเปิด (ประมาณ 19:30 น. เวลาไทย)</span></p></div>
       <div class="card"><div class="ic">📖</div>
-        <h3><span class="fr">Les books & statistiques</span><span class="en">Books & statistics</span></h3>
+        <h3><span class="fr">Les books & statistiques</span><span class="en">Books & statistics</span><span class="th">บันทึกการเทรดและสถิติ</span></h3>
         <p><span class="fr">Le journal de tous les trades et des bilans réguliers en points : taux de réussite, gains, pertes. Rien n'est caché.</span>
-        <span class="en">A log of every trade and regular reports in points: win rate, gains, losses. Nothing hidden.</span></p></div>
+        <span class="en">A log of every trade and regular reports in points: win rate, gains, losses. Nothing hidden.</span><span class="th">บันทึกทุกออเดอร์และรายงานผลเป็นจุดอย่างสม่ำเสมอ: อัตราชนะ กำไร ขาดทุน ไม่มีอะไรปิดบัง</span></p></div>
     </div>
   </section>
 
   <!-- METHODE -->
   <section>
-    <div class="kicker"><span class="fr">LA MÉTHODE</span><span class="en">THE METHOD</span></div>
-    <h2><span class="fr">Une journée First Light</span><span class="en">A First Light day</span></h2>
+    <div class="kicker"><span class="fr">LA MÉTHODE</span><span class="en">THE METHOD</span><span class="th">วิธีการ</span></div>
+    <h2><span class="fr">Une journée First Light</span><span class="en">A First Light day</span><span class="th">หนึ่งวันกับ First Light</span></h2>
     <div class="steps">
       <div class="step"><b>01</b>
-        <h3><span class="fr">Le plan</span><span class="en">The plan</span></h3>
+        <h3><span class="fr">Le plan</span><span class="en">The plan</span><span class="th">แผนการ</span></h3>
         <p><span class="fr">Le matin, on regarde le résultat d'hier face au plan, puis on pose le plan du jour : zones, scénarios, annonces à surveiller.</span>
-        <span class="en">In the morning, we review yesterday against the plan, then set today's plan: zones, scenarios, news to watch.</span></p></div>
+        <span class="en">In the morning, we review yesterday against the plan, then set today's plan: zones, scenarios, news to watch.</span><span class="th">ตอนเช้า เราทบทวนผลเมื่อวานเทียบกับแผน แล้ววางแผนของวันนี้: โซนราคา สถานการณ์ที่เป็นไปได้ และข่าวที่ต้องจับตา</span></p></div>
       <div class="step"><b>02</b>
-        <h3><span class="fr">L'exécution</span><span class="en">Execution</span></h3>
+        <h3><span class="fr">L'exécution</span><span class="en">Execution</span><span class="th">การลงมือเทรด</span></h3>
         <p><span class="fr">Les calls tombent avec des niveaux clairs. Vous calculez votre taille avec le bot et vous placez votre ordre, même depuis votre téléphone.</span>
-        <span class="en">Calls come in with clear levels. You size your position with the bot and place your order, even from your phone.</span></p></div>
+        <span class="en">Calls come in with clear levels. You size your position with the bot and place your order, even from your phone.</span><span class="th">สัญญาณมาพร้อมระดับราคาที่ชัดเจน คุณคำนวณขนาดล็อตด้วยบอท แล้ววางออเดอร์ได้แม้จากโทรศัพท์</span></p></div>
       <div class="step"><b>03</b>
-        <h3><span class="fr">Le bilan</span><span class="en">The review</span></h3>
+        <h3><span class="fr">Le bilan</span><span class="en">The review</span><span class="th">การสรุปผล</span></h3>
         <p><span class="fr">Chaque trade est publié, gagnant ou perdant. On apprend autant des pertes que des gains.</span>
-        <span class="en">Every trade is published, win or loss. We learn as much from losses as from wins.</span></p></div>
+        <span class="en">Every trade is published, win or loss. We learn as much from losses as from wins.</span><span class="th">ทุกออเดอร์ถูกเปิดเผย ไม่ว่ากำไรหรือขาดทุน เราเรียนรู้จากการขาดทุนพอๆ กับการได้กำไร</span></p></div>
     </div>
     <p class="motto">LEARN · PRACTICE · EARN</p>
   </section>
 
   <!-- POUR QUI -->
   <section>
-    <div class="kicker"><span class="fr">POUR QUI ?</span><span class="en">WHO IS IT FOR?</span></div>
-    <h2><span class="fr">Que vous débutiez ou non</span><span class="en">Beginner or not</span></h2>
+    <div class="kicker"><span class="fr">POUR QUI ?</span><span class="en">WHO IS IT FOR?</span><span class="th">เหมาะกับใคร?</span></div>
+    <h2><span class="fr">Que vous débutiez ou non</span><span class="en">Beginner or not</span><span class="th">ไม่ว่าคุณจะเป็นมือใหม่หรือไม่</span></h2>
     <div class="who">
       <div class="card"><div class="ic">🌱</div>
-        <h3><span class="fr">Vous débutez</span><span class="en">You're starting out</span></h3>
+        <h3><span class="fr">Vous débutez</span><span class="en">You're starting out</span><span class="th">คุณเพิ่งเริ่มต้น</span></h3>
         <p><span class="fr">Tutoriels pour prendre une alerte sur MT5, calculateur de risque, explications à chaque brief : vous apprenez en pratiquant.</span>
-        <span class="en">Tutorials to take an alert on MT5, a risk calculator, explanations in every brief: you learn by doing.</span></p></div>
+        <span class="en">Tutorials to take an alert on MT5, a risk calculator, explanations in every brief: you learn by doing.</span><span class="th">มีวิดีโอสอนวิธีวางออเดอร์ตามสัญญาณใน MT5 เครื่องคำนวณความเสี่ยง และคำอธิบายในทุกบทวิเคราะห์: เรียนรู้ไปพร้อมกับการลงมือทำ</span></p></div>
       <div class="card"><div class="ic">🏆</div>
-        <h3><span class="fr">Vous tradez en prop firm</span><span class="en">You trade a prop firm account</span></h3>
+        <h3><span class="fr">Vous tradez en prop firm</span><span class="en">You trade a prop firm account</span><span class="th">คุณเทรดบัญชี Prop Firm</span></h3>
         <p><span class="fr">Tailles de position adaptées à votre compte et gestion stricte du risque pour respecter les règles de drawdown.</span>
-        <span class="en">Position sizes matched to your account and strict risk management to stay within drawdown rules.</span></p></div>
+        <span class="en">Position sizes matched to your account and strict risk management to stay within drawdown rules.</span><span class="th">ขนาดล็อตที่เหมาะกับบัญชีของคุณ และการบริหารความเสี่ยงอย่างเข้มงวดเพื่อไม่ให้ผิดกฎ Drawdown</span></p></div>
       <div class="card"><div class="ic">⏱️</div>
-        <h3><span class="fr">Vous manquez de temps</span><span class="en">You're short on time</span></h3>
+        <h3><span class="fr">Vous manquez de temps</span><span class="en">You're short on time</span><span class="th">คุณมีเวลาน้อย</span></h3>
         <p><span class="fr">Le brief se lit en quelques minutes, et les ordres limites se placent à l'avance : pas besoin de rester devant l'écran.</span>
-        <span class="en">The brief takes a few minutes to read, and limit orders are set in advance: no need to sit at the screen.</span></p></div>
+        <span class="en">The brief takes a few minutes to read, and limit orders are set in advance: no need to sit at the screen.</span><span class="th">อ่านบทวิเคราะห์ได้ในไม่กี่นาที และวางคำสั่ง Limit ล่วงหน้าได้: ไม่ต้องนั่งเฝ้าหน้าจอ</span></p></div>
     </div>
   </section>
 
   <!-- TRANSPARENCE -->
   <section>
-    <div class="kicker"><span class="fr">TRANSPARENCE</span><span class="en">TRANSPARENCY</span></div>
-    <h2><span class="fr">Nos trades, à livre ouvert</span><span class="en">Our trades, open book</span></h2>
+    <div class="kicker"><span class="fr">TRANSPARENCE</span><span class="en">TRANSPARENCY</span><span class="th">ความโปร่งใส</span></div>
+    <h2><span class="fr">Nos trades, à livre ouvert</span><span class="en">Our trades, open book</span><span class="th">ออเดอร์ของเรา เปิดเผยทุกหน้า</span></h2>
     <div class="trust">
       <div class="card">
         <ul>
-          <li><span class="fr">Tous les trades sont publiés, les gagnants comme les perdants.</span><span class="en">Every trade is published, winners and losers alike.</span></li>
-          <li><span class="fr">Les résultats sont donnés en points, jamais en dollars : chacun trade avec son propre capital.</span><span class="en">Results are given in points, never in dollars: everyone trades their own capital.</span></li>
-          <li><span class="fr">Chaque call porte un numéro #FL : impossible de réécrire l'historique.</span><span class="en">Every call carries an #FL number: history can't be rewritten.</span></li>
-          <li><span class="fr">Trader depuis 2020, je suis en Thaïlande depuis 12 ans : je vois le marché bouger avant que l'Europe se réveille.</span><span class="en">Trading since 2020, based in Thailand for 12 years: I see the market move before Europe wakes up.</span></li>
+          <li><span class="fr">Tous les trades sont publiés, les gagnants comme les perdants.</span><span class="en">Every trade is published, winners and losers alike.</span><span class="th">ทุกออเดอร์ถูกเปิดเผย ทั้งที่กำไรและขาดทุน</span></li>
+          <li><span class="fr">Les résultats sont donnés en points, jamais en dollars : chacun trade avec son propre capital.</span><span class="en">Results are given in points, never in dollars: everyone trades their own capital.</span><span class="th">ผลลัพธ์แสดงเป็นจุด ไม่ใช่เป็นดอลลาร์ เพราะแต่ละคนเทรดด้วยเงินทุนของตัวเอง</span></li>
+          <li><span class="fr">Chaque call porte un numéro #FL : impossible de réécrire l'historique.</span><span class="en">Every call carries an #FL number: history can't be rewritten.</span><span class="th">ทุกสัญญาณมีหมายเลข #FL: ไม่มีใครแก้ไขประวัติย้อนหลังได้</span></li>
+          <li><span class="fr">Trader depuis 2020, je suis en Thaïlande depuis 12 ans : je vois le marché bouger avant que l'Europe se réveille.</span><span class="en">Trading since 2020, based in Thailand for 12 years: I see the market move before Europe wakes up.</span><span class="th">เทรดมาตั้งแต่ปี 2020 อาศัยอยู่ในประเทศไทยมา 12 ปี: ผมเห็นตลาดเคลื่อนไหวก่อนที่ยุโรปจะตื่น</span></li>
         </ul>
       </div>
       <div class="bo">
         <div class="ic">📖</div>
         <h3>BOOK OUVERT</h3>
         <p><span class="fr">Pas encore convaincu ? Suivez gratuitement notre canal vitrine : des calls offerts de temps en temps, des extraits de lives et le book de la semaine.</span>
-        <span class="en">Not convinced yet? Follow our free showcase channel: occasional free calls, live session clips and the weekly book.</span></p>
-        <a class="btn ghost" data-link="bookouvert" href="#" target="_blank" rel="noopener"><span class="fr">Voir Book Ouvert</span><span class="en">See Book Ouvert</span></a>
+        <span class="en">Not convinced yet? Follow our free showcase channel: occasional free calls, live session clips and the weekly book.</span><span class="th">ยังไม่แน่ใจ? ติดตามช่องตัวอย่างฟรีของเรา: สัญญาณฟรีเป็นครั้งคราว คลิปจากไลฟ์ และบันทึกการเทรดประจำสัปดาห์</span></p>
+        <a class="btn ghost" data-link="bookouvert" href="#" target="_blank" rel="noopener"><span class="fr">Voir Book Ouvert</span><span class="en">See Book Ouvert</span><span class="th">ดู Book Ouvert</span></a>
       </div>
     </div>
   </section>
@@ -240,30 +242,30 @@
   <!-- FAQ -->
   <section class="faq">
     <div class="kicker">FAQ</div>
-    <h2><span class="fr">Vos questions</span><span class="en">Your questions</span></h2>
-    <details><summary><span class="fr">Faut-il de l'expérience en trading ?</span><span class="en">Do I need trading experience?</span></summary>
+    <h2><span class="fr">Vos questions</span><span class="en">Your questions</span><span class="th">คำถามที่พบบ่อย</span></h2>
+    <details><summary><span class="fr">Faut-il de l'expérience en trading ?</span><span class="en">Do I need trading experience?</span><span class="th">ต้องมีประสบการณ์เทรดไหม?</span></summary>
       <div class="a"><span class="fr">Non. Les tutoriels et le calculateur sont là pour vous accompagner pas à pas. Je recommande de commencer petit, ou en compte démo, le temps de prendre ses marques.</span>
-      <span class="en">No. Tutorials and the calculator guide you step by step. I recommend starting small, or on a demo account, while you find your feet.</span></div></details>
-    <details><summary><span class="fr">De quoi ai-je besoin pour suivre les calls ?</span><span class="en">What do I need to follow the calls?</span></summary>
+      <span class="en">No. Tutorials and the calculator guide you step by step. I recommend starting small, or on a demo account, while you find your feet.</span><span class="th">ไม่จำเป็น วิดีโอสอนและเครื่องคำนวณจะช่วยคุณทีละขั้นตอน แนะนำให้เริ่มจากทุนน้อยหรือบัญชีทดลองก่อน จนกว่าจะคุ้นเคย</span></div></details>
+    <details><summary><span class="fr">De quoi ai-je besoin pour suivre les calls ?</span><span class="en">What do I need to follow the calls?</span><span class="th">ต้องมีอะไรบ้างเพื่อเทรดตามสัญญาณ?</span></summary>
       <div class="a"><span class="fr">Un compte de trading sur MetaTrader 5 (chez un broker ou une prop firm) et Telegram. Tout se fait aussi depuis votre téléphone.</span>
-      <span class="en">A MetaTrader 5 trading account (with a broker or a prop firm) and Telegram. Everything also works from your phone.</span></div></details>
-    <details><summary><span class="fr">Combien de temps faut-il par jour ?</span><span class="en">How much time does it take each day?</span></summary>
+      <span class="en">A MetaTrader 5 trading account (with a broker or a prop firm) and Telegram. Everything also works from your phone.</span><span class="th">บัญชีเทรด MetaTrader 5 (กับโบรกเกอร์หรือ Prop Firm) และ Telegram ทุกอย่างใช้งานจากโทรศัพท์ได้</span></div></details>
+    <details><summary><span class="fr">Combien de temps faut-il par jour ?</span><span class="en">How much time does it take each day?</span><span class="th">ต้องใช้เวลาวันละเท่าไร?</span></summary>
       <div class="a"><span class="fr">Quelques minutes pour lire le brief et placer vos ordres. Les lives sont un bonus, pas une obligation.</span>
-      <span class="en">A few minutes to read the brief and place your orders. Live sessions are a bonus, not a requirement.</span></div></details>
-    <details><summary><span class="fr">Les gains sont-ils garantis ?</span><span class="en">Are profits guaranteed?</span></summary>
+      <span class="en">A few minutes to read the brief and place your orders. Live sessions are a bonus, not a requirement.</span><span class="th">ไม่กี่นาทีในการอ่านบทวิเคราะห์และวางออเดอร์ ไลฟ์เป็นโบนัส ไม่ใช่สิ่งที่บังคับ</span></div></details>
+    <details><summary><span class="fr">Les gains sont-ils garantis ?</span><span class="en">Are profits guaranteed?</span><span class="th">รับประกันกำไรไหม?</span></summary>
       <div class="a"><span class="fr">Non, et personne d'honnête ne peut vous le promettre. Il y a des trades perdants, et ils sont publiés. Ce que First Light vous apporte : une méthode, de la rigueur et une gestion du risque claire.</span>
-      <span class="en">No, and no honest person can promise that. There are losing trades, and they are published. What First Light gives you: a method, discipline and clear risk management.</span></div></details>
-    <details><summary><span class="fr">Comment rejoindre Premium ?</span><span class="en">How do I join Premium?</span></summary>
+      <span class="en">No, and no honest person can promise that. There are losing trades, and they are published. What First Light gives you: a method, discipline and clear risk management.</span><span class="th">ไม่ และไม่มีใครที่ซื่อสัตย์จะสัญญาแบบนั้นได้ มีออเดอร์ที่ขาดทุน และเราก็เปิดเผยด้วย สิ่งที่ First Light มอบให้คือ วิธีการ วินัย และการบริหารความเสี่ยงที่ชัดเจน</span></div></details>
+    <details><summary><span class="fr">Comment rejoindre Premium ?</span><span class="en">How do I join Premium?</span><span class="th">สมัคร Premium อย่างไร?</span></summary>
       <div class="a"><span class="fr">Écrivez-moi directement sur Telegram : je vous présente l'offre, les modalités et je réponds à vos questions personnellement.</span>
-      <span class="en">Message me directly on Telegram: I'll walk you through the offer and the details, and answer your questions personally.</span></div></details>
+      <span class="en">Message me directly on Telegram: I'll walk you through the offer and the details, and answer your questions personally.</span><span class="th">ส่งข้อความหาผมโดยตรงทาง Telegram ผมจะอธิบายแพ็กเกจ รายละเอียด และตอบทุกคำถามด้วยตัวเอง</span></div></details>
   </section>
 
   <!-- CTA FINAL -->
   <div class="final">
-    <h2><span class="fr">Prêt à voir le marché avant tout le monde ?</span><span class="en">Ready to see the market before everyone else?</span></h2>
-    <p><span class="fr">Écrivez-moi, je vous réponds personnellement.</span><span class="en">Message me, I'll reply personally.</span></p>
+    <h2><span class="fr">Prêt à voir le marché avant tout le monde ?</span><span class="en">Ready to see the market before everyone else?</span><span class="th">พร้อมเห็นตลาดก่อนใครหรือยัง?</span></h2>
+    <p><span class="fr">Écrivez-moi, je vous réponds personnellement.</span><span class="en">Message me, I'll reply personally.</span><span class="th">ส่งข้อความมาได้เลย ผมตอบด้วยตัวเอง</span></p>
     <div class="cta">
-      <a class="btn main" data-link="contact" href="#" target="_blank" rel="noopener">✈️ <span class="fr">M'écrire sur Telegram</span><span class="en">Message me on Telegram</span></a>
+      <a class="btn main" data-link="contact" href="#" target="_blank" rel="noopener">✈️ <span class="fr">M'écrire sur Telegram</span><span class="en">Message me on Telegram</span><span class="th">ส่งข้อความทาง Telegram</span></a>
       <a class="btn ghost" data-link="whatsapp" href="#" target="_blank" rel="noopener">💬 WhatsApp</a>
     </div>
     <p class="handle">Telegram : <strong>@MANUSAMUI07</strong></p>
@@ -271,7 +273,7 @@
 
   <p class="disc">
     <span class="fr">Le trading de CFD, d'or, d'indices et de cryptomonnaies comporte un risque élevé de perte en capital. Les performances passées ne préjugent pas des performances futures. Contenu éducatif et informatif, ne constituant pas un conseil en investissement.</span>
-    <span class="en">Trading CFDs, gold, indices and cryptocurrencies carries a high risk of capital loss. Past performance is not indicative of future results. Educational and informational content only, not investment advice.</span>
+    <span class="en">Trading CFDs, gold, indices and cryptocurrencies carries a high risk of capital loss. Past performance is not indicative of future results. Educational and informational content only, not investment advice.</span><span class="th">การเทรด CFD ทองคำ ดัชนี และคริปโตเคอร์เรนซี มีความเสี่ยงสูงที่จะสูญเสียเงินทุน ผลการดำเนินงานในอดีตไม่ได้รับประกันผลในอนาคต เนื้อหานี้มีวัตถุประสงค์เพื่อการศึกษาและให้ข้อมูลเท่านั้น ไม่ใช่คำแนะนำการลงทุน</span>
   </p>
   <p class="copy">© First Light</p>
 </div>
@@ -313,11 +315,15 @@ function setLang(l){
   document.body.dataset.lang=l; document.documentElement.lang=l;
   document.getElementById('bfr').classList.toggle('on',l==='fr');
   document.getElementById('ben').classList.toggle('on',l==='en');
+  document.getElementById('bth').classList.toggle('on',l==='th');
+  if(location.hash!=='#'+l){try{history.replaceState(null,'','#'+l)}catch(e){}}
   try{localStorage.setItem('fl-lang',l)}catch(e){}
 }
 (function(){
-  let l=null; try{l=localStorage.getItem('fl-lang')}catch(e){}
-  if(!l) l=(navigator.language||'fr').toLowerCase().startsWith('fr')?'fr':'en';
+  let l=(location.hash||'').slice(1);
+  if(!['fr','en','th'].includes(l)){ l=null; try{l=localStorage.getItem('fl-lang')}catch(e){} }
+  if(l&&!['fr','en','th'].includes(l)) l=null;
+  if(!l){ const n=(navigator.language||'fr').toLowerCase(); l=n.startsWith('fr')?'fr':n.startsWith('th')?'th':'en'; }
   setLang(l);
 })();
 </script>
