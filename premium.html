@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>First Light Premium</title>
+<meta name="description" content="First Light Premium — Le marché, avant votre réveil. Brief chaque matin, calls en temps réel, outils de gestion du risque, trades à livre ouvert.">
+<meta property="og:title" content="First Light Premium">
+<meta property="og:description" content="Le marché, avant votre réveil · The market, before you wake up">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#070D1A; --navy2:#0E1830; --gold:#D4A84B; --gold2:#F2D27A;
+    --text:#EDE6D6; --muted:#9AA3B5; --line:rgba(212,168,75,.28); --card:rgba(255,255,255,.04);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,sans-serif;color:var(--text);line-height:1.55;
+    background:
+      radial-gradient(ellipse 90% 45% at 50% 0%, rgba(212,168,75,.22), transparent 60%),
+      linear-gradient(180deg,var(--navy2),var(--navy) 40%);
+    background-color:var(--navy);
+  }
+  .wrap{max-width:960px;margin:0 auto;padding:22px 20px 40px}
+  .top{display:flex;justify-content:space-between;align-items:center}
+  .brand{font-family:'Cinzel',serif;font-weight:700;letter-spacing:.16em;color:var(--gold);font-size:14px}
+  .lang{display:flex;gap:6px}
+  .lang button{background:transparent;border:1px solid var(--line);color:var(--muted);
+    font:600 12px 'Inter';letter-spacing:.08em;padding:6px 11px;border-radius:999px;cursor:pointer}
+  .lang button.on{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+
+  /* HERO */
+  .hero{text-align:center;padding:34px 0 18px}
+  .logo{width:170px;height:auto;display:block;margin:0 auto 6px;filter:drop-shadow(0 0 24px rgba(212,168,75,.35))}
+  h1{font-family:'Cinzel',serif;font-weight:700;font-size:clamp(34px,8vw,56px);letter-spacing:.12em;line-height:1.1;
+     background:linear-gradient(180deg,var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .pill{display:inline-block;margin-top:10px;padding:5px 14px;border-radius:999px;background:var(--gold);color:var(--navy);
+     font:700 12px 'Inter';letter-spacing:.3em}
+  .slogan{font-style:italic;font-size:18px;margin:18px 0 10px;opacity:.95}
+  .lead{max-width:600px;margin:0 auto;color:var(--muted);font-size:16px}
+  .cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:26px}
+  .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;font-size:15px;
+     padding:14px 22px;border-radius:14px;transition:transform .15s,background .15s,border-color .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn.main{background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--navy);box-shadow:0 8px 28px rgba(212,168,75,.3)}
+  .btn.ghost{border:1px solid var(--line);color:var(--text);background:var(--card)}
+  .btn.ghost:hover{border-color:var(--gold)}
+  .assets{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:24px}
+  .assets span{font-size:12.5px;border:1px solid var(--line);border-radius:999px;padding:5px 12px;color:var(--gold2)}
+
+  /* SECTIONS */
+  section{padding:46px 0 6px}
+  .kicker{font-family:'Cinzel',serif;font-size:13px;letter-spacing:.24em;color:var(--gold);text-align:center}
+  h2{font-size:clamp(24px,5vw,32px);text-align:center;margin:8px 0 26px;font-weight:700}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
+  .card .ic{font-size:26px}
+  .card h3{font-size:17px;margin:8px 0 6px;color:var(--gold2)}
+  .card p{font-size:14.5px;color:var(--text);opacity:.88}
+  .tag{display:inline-block;font-size:11px;letter-spacing:.12em;color:var(--navy);background:var(--gold);border-radius:6px;padding:2px 7px;margin-left:6px;vertical-align:middle;font-weight:700}
+
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;counter-reset:s}
+  .step{position:relative;padding:22px 20px 20px;border-radius:18px;border:1px solid var(--line);
+     background:linear-gradient(180deg,rgba(212,168,75,.08),transparent)}
+  .step b{font-family:'Cinzel',serif;font-size:30px;color:var(--gold)}
+  .step h3{font-size:17px;margin:4px 0 6px}
+  .step p{font-size:14.5px;opacity:.88}
+  .motto{text-align:center;margin-top:20px;font-family:'Cinzel',serif;letter-spacing:.2em;color:var(--gold2);font-size:15px}
+
+  .who{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+  .who .card h3{color:var(--text)}
+
+  .trust{display:grid;grid-template-columns:1.2fr 1fr;gap:18px;align-items:stretch}
+  @media(max-width:720px){.trust{grid-template-columns:1fr}}
+  .trust ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+  .trust li{display:flex;gap:12px;font-size:15px}
+  .trust li::before{content:"✦";color:var(--gold);flex-shrink:0}
+  .bo{border:1px solid var(--gold);border-radius:18px;padding:22px;text-align:center;
+     background:radial-gradient(ellipse at top,rgba(212,168,75,.16),transparent 70%)}
+  .bo .ic{font-size:34px}
+  .bo h3{font-family:'Cinzel',serif;letter-spacing:.14em;color:var(--gold2);margin:6px 0}
+  .bo p{font-size:14px;opacity:.88;margin-bottom:16px}
+
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:10px;overflow:hidden}
+  .faq summary{list-style:none;cursor:pointer;padding:16px 18px;font-weight:600;display:flex;gap:10px;align-items:center}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";margin-left:auto;color:var(--gold);font-size:20px;transition:transform .2s}
+  .faq details[open] summary::after{transform:rotate(45deg)}
+  .faq .a{padding:0 18px 16px;font-size:14.5px;opacity:.9}
+
+  .final{text-align:center;margin-top:50px;padding:34px 20px;border-radius:22px;border:1px solid var(--line);
+     background:radial-gradient(ellipse 80% 80% at 50% 0%,rgba(212,168,75,.2),transparent 70%)}
+  .final h2{margin-bottom:10px}
+  .final p{color:var(--muted);max-width:520px;margin:0 auto}
+  .handle{margin-top:12px;font-size:13px;color:var(--muted)}
+  .handle strong{color:var(--gold2)}
+
+  .disc{font-size:11.5px;color:var(--muted);text-align:center;max-width:620px;margin:34px auto 0;opacity:.8}
+  .copy{font-size:11px;color:var(--muted);text-align:center;margin-top:10px;opacity:.6}
+  [data-lang="en"] .fr, [data-lang="fr"] .en{display:none}
+</style>
+</head>
+<body data-lang="fr">
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">FIRST LIGHT</div>
+    <div class="lang">
+      <button id="bfr" class="on" onclick="setLang('fr')">FR</button>
+      <button id="ben" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <svg class="logo" viewBox="0 0 160 104" xmlns="http://www.w3.org/2000/svg" aria-label="First Light">
+      <defs>
+        <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#F2D27A"/><stop offset="1" stop-color="#C8962F"/>
+        </linearGradient>
+        <clipPath id="above"><rect x="0" y="0" width="160" height="88"/></clipPath>
+      </defs>
+      <g clip-path="url(#above)"><circle cx="80" cy="88" r="26" fill="url(#g)"/><g id="rays"></g></g>
+      <line x1="14" y1="88" x2="146" y2="88" stroke="url(#g)" stroke-width="2.4" stroke-linecap="round"/>
+      <line x1="40" y1="96" x2="120" y2="96" stroke="url(#g)" stroke-width="1.4" stroke-linecap="round" opacity=".6"/>
+    </svg>
+    <h1>FIRST LIGHT</h1>
+    <div class="pill">PREMIUM</div>
+    <p class="slogan"><span class="fr">« Le marché, avant votre réveil »</span><span class="en">“The market, before you wake up”</span></p>
+    <p class="lead">
+      <span class="fr">Chaque matin, le plan de la journée. Pendant la séance, des calls précis. Le soir, les résultats publiés à livre ouvert. Et les outils pour suivre tout ça sans brûler votre compte.</span>
+      <span class="en">Every morning, the day's plan. During the session, precise calls. Afterwards, every result published, open book. Plus the tools to follow it all without blowing your account.</span>
+    </p>
+    <div class="cta">
+      <a class="btn main" data-link="contact" href="#" target="_blank" rel="noopener">☀️ <span class="fr">Je veux rejoindre Premium</span><span class="en">I want to join Premium</span></a>
+      <a class="btn ghost" href="#offre">↓ <span class="fr">Ce qui est inclus</span><span class="en">What's included</span></a>
+    </div>
+    <div class="assets"><span>Gold · XAU/USD</span><span>Nasdaq</span><span>Dow Jones</span><span>Bitcoin</span><span><span class="fr">Pétrole</span><span class="en">Oil</span></span></div>
+  </header>
+
+  <!-- OFFRE -->
+  <section id="offre">
+    <div class="kicker"><span class="fr">CE QUE VOUS RECEVEZ</span><span class="en">WHAT YOU GET</span></div>
+    <h2><span class="fr">Une méthode complète, pas juste des signaux</span><span class="en">A complete method, not just signals</span></h2>
+    <div class="grid">
+      <div class="card"><div class="ic">🌅</div>
+        <h3><span class="fr">Le brief du matin</span><span class="en">The morning brief</span></h3>
+        <p><span class="fr">Chaque jour avant l'ouverture de Londres : contexte macro, agenda économique et niveaux clés sur l'or, les indices, le Bitcoin et le pétrole. En vocal + PDF, en français et en anglais.</span>
+        <span class="en">Every day before the London open: macro context, economic calendar and key levels on gold, indices, Bitcoin and oil. Voice note + PDF, in French and English.</span></p></div>
+      <div class="card"><div class="ic">🎯</div>
+        <h3><span class="fr">Les calls signés</span><span class="en">Signed calls</span><span class="tag">#FL</span></h3>
+        <p><span class="fr">Entrée, stop loss, TP1 et TP2, en ordres limites pour ceux qui ne sont pas devant l'écran. Chaque call est numéroté et suivi jusqu'à sa clôture.</span>
+        <span class="en">Entry, stop loss, TP1 and TP2, as limit orders for those who can't watch the screen. Every call is numbered and tracked until it closes.</span></p></div>
+      <div class="card"><div class="ic">📍</div>
+        <h3>FL Zones<span class="tag">TradingView</span></h3>
+        <p><span class="fr">Mon indicateur maison : zones de liquidité, supports et résistances répétés, stops et objectifs basés sur la volatilité. Ce que je regarde, vous le voyez.</span>
+        <span class="en">My in-house indicator: liquidity zones, repeated support and resistance, volatility-based stops and targets. What I watch, you see.</span></p></div>
+      <div class="card"><div class="ic">🧮</div>
+        <h3><span class="fr">Le bot calculateur</span><span class="en">The calculator bot</span></h3>
+        <p><span class="fr">Vous entrez votre capital et votre risque, il vous donne la bonne taille de position sur chaque actif, avec une alerte quand le stop est trop serré. Idéal en prop firm.</span>
+        <span class="en">Enter your capital and risk, it gives you the right position size on every asset, with a warning when the stop is too tight. Ideal for prop firm accounts.</span></p></div>
+      <div class="card"><div class="ic">🔴</div>
+        <h3><span class="fr">Les lives scalping</span><span class="en">Live scalping sessions</span></h3>
+        <p><span class="fr">1 à 2 fois par semaine, je trade en direct en partage d'écran, juste avant l'ouverture américaine (vers 13h30 heure de Paris).</span>
+        <span class="en">Once or twice a week, I trade live with screen sharing, right before the US open (around 19:30 Bangkok time).</span></p></div>
+      <div class="card"><div class="ic">📖</div>
+        <h3><span class="fr">Les books & statistiques</span><span class="en">Books & statistics</span></h3>
+        <p><span class="fr">Le journal de tous les trades et des bilans réguliers en points : taux de réussite, gains, pertes. Rien n'est caché.</span>
+        <span class="en">A log of every trade and regular reports in points: win rate, gains, losses. Nothing hidden.</span></p></div>
+    </div>
+  </section>
+
+  <!-- METHODE -->
+  <section>
+    <div class="kicker"><span class="fr">LA MÉTHODE</span><span class="en">THE METHOD</span></div>
+    <h2><span class="fr">Une journée First Light</span><span class="en">A First Light day</span></h2>
+    <div class="steps">
+      <div class="step"><b>01</b>
+        <h3><span class="fr">Le plan</span><span class="en">The plan</span></h3>
+        <p><span class="fr">Le matin, on regarde le résultat d'hier face au plan, puis on pose le plan du jour : zones, scénarios, annonces à surveiller.</span>
+        <span class="en">In the morning, we review yesterday against the plan, then set today's plan: zones, scenarios, news to watch.</span></p></div>
+      <div class="step"><b>02</b>
+        <h3><span class="fr">L'exécution</span><span class="en">Execution</span></h3>
+        <p><span class="fr">Les calls tombent avec des niveaux clairs. Vous calculez votre taille avec le bot et vous placez votre ordre, même depuis votre téléphone.</span>
+        <span class="en">Calls come in with clear levels. You size your position with the bot and place your order, even from your phone.</span></p></div>
+      <div class="step"><b>03</b>
+        <h3><span class="fr">Le bilan</span><span class="en">The review</span></h3>
+        <p><span class="fr">Chaque trade est publié, gagnant ou perdant. On apprend autant des pertes que des gains.</span>
+        <span class="en">Every trade is published, win or loss. We learn as much from losses as from wins.</span></p></div>
+    </div>
+    <p class="motto">LEARN · PRACTICE · EARN</p>
+  </section>
+
+  <!-- POUR QUI -->
+  <section>
+    <div class="kicker"><span class="fr">POUR QUI ?</span><span class="en">WHO IS IT FOR?</span></div>
+    <h2><span class="fr">Que vous débutiez ou non</span><span class="en">Beginner or not</span></h2>
+    <div class="who">
+      <div class="card"><div class="ic">🌱</div>
+        <h3><span class="fr">Vous débutez</span><span class="en">You're starting out</span></h3>
+        <p><span class="fr">Tutoriels pour prendre une alerte sur MT5, calculateur de risque, explications à chaque brief : vous apprenez en pratiquant.</span>
+        <span class="en">Tutorials to take an alert on MT5, a risk calculator, explanations in every brief: you learn by doing.</span></p></div>
+      <div class="card"><div class="ic">🏆</div>
+        <h3><span class="fr">Vous tradez en prop firm</span><span class="en">You trade a prop firm account</span></h3>
+        <p><span class="fr">Tailles de position adaptées à votre compte et gestion stricte du risque pour respecter les règles de drawdown.</span>
+        <span class="en">Position sizes matched to your account and strict risk management to stay within drawdown rules.</span></p></div>
+      <div class="card"><div class="ic">⏱️</div>
+        <h3><span class="fr">Vous manquez de temps</span><span class="en">You're short on time</span></h3>
+        <p><span class="fr">Le brief se lit en quelques minutes, et les ordres limites se placent à l'avance : pas besoin de rester devant l'écran.</span>
+        <span class="en">The brief takes a few minutes to read, and limit orders are set in advance: no need to sit at the screen.</span></p></div>
+    </div>
+  </section>
+
+  <!-- TRANSPARENCE -->
+  <section>
+    <div class="kicker"><span class="fr">TRANSPARENCE</span><span class="en">TRANSPARENCY</span></div>
+    <h2><span class="fr">Nos trades, à livre ouvert</span><span class="en">Our trades, open book</span></h2>
+    <div class="trust">
+      <div class="card">
+        <ul>
+          <li><span class="fr">Tous les trades sont publiés, les gagnants comme les perdants.</span><span class="en">Every trade is published, winners and losers alike.</span></li>
+          <li><span class="fr">Les résultats sont donnés en points, jamais en dollars : chacun trade avec son propre capital.</span><span class="en">Results are given in points, never in dollars: everyone trades their own capital.</span></li>
+          <li><span class="fr">Chaque call porte un numéro #FL : impossible de réécrire l'historique.</span><span class="en">Every call carries an #FL number: history can't be rewritten.</span></li>
+          <li><span class="fr">Trader depuis 2020, je suis en Thaïlande depuis 12 ans : je vois le marché bouger avant que l'Europe se réveille.</span><span class="en">Trading since 2020, based in Thailand for 12 years: I see the market move before Europe wakes up.</span></li>
+        </ul>
+      </div>
+      <div class="bo">
+        <div class="ic">📖</div>
+        <h3>BOOK OUVERT</h3>
+        <p><span class="fr">Pas encore convaincu ? Suivez gratuitement notre canal vitrine : des calls offerts de temps en temps, des extraits de lives et le book de la semaine.</span>
+        <span class="en">Not convinced yet? Follow our free showcase channel: occasional free calls, live session clips and the weekly book.</span></p>
+        <a class="btn ghost" data-link="bookouvert" href="#" target="_blank" rel="noopener"><span class="fr">Voir Book Ouvert</span><span class="en">See Book Ouvert</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="kicker">FAQ</div>
+    <h2><span class="fr">Vos questions</span><span class="en">Your questions</span></h2>
+    <details><summary><span class="fr">Faut-il de l'expérience en trading ?</span><span class="en">Do I need trading experience?</span></summary>
+      <div class="a"><span class="fr">Non. Les tutoriels et le calculateur sont là pour vous accompagner pas à pas. Je recommande de commencer petit, ou en compte démo, le temps de prendre ses marques.</span>
+      <span class="en">No. Tutorials and the calculator guide you step by step. I recommend starting small, or on a demo account, while you find your feet.</span></div></details>
+    <details><summary><span class="fr">De quoi ai-je besoin pour suivre les calls ?</span><span class="en">What do I need to follow the calls?</span></summary>
+      <div class="a"><span class="fr">Un compte de trading sur MetaTrader 5 (chez un broker ou une prop firm) et Telegram. Tout se fait aussi depuis votre téléphone.</span>
+      <span class="en">A MetaTrader 5 trading account (with a broker or a prop firm) and Telegram. Everything also works from your phone.</span></div></details>
+    <details><summary><span class="fr">Combien de temps faut-il par jour ?</span><span class="en">How much time does it take each day?</span></summary>
+      <div class="a"><span class="fr">Quelques minutes pour lire le brief et placer vos ordres. Les lives sont un bonus, pas une obligation.</span>
+      <span class="en">A few minutes to read the brief and place your orders. Live sessions are a bonus, not a requirement.</span></div></details>
+    <details><summary><span class="fr">Les gains sont-ils garantis ?</span><span class="en">Are profits guaranteed?</span></summary>
+      <div class="a"><span class="fr">Non, et personne d'honnête ne peut vous le promettre. Il y a des trades perdants, et ils sont publiés. Ce que First Light vous apporte : une méthode, de la rigueur et une gestion du risque claire.</span>
+      <span class="en">No, and no honest person can promise that. There are losing trades, and they are published. What First Light gives you: a method, discipline and clear risk management.</span></div></details>
+    <details><summary><span class="fr">Comment rejoindre Premium ?</span><span class="en">How do I join Premium?</span></summary>
+      <div class="a"><span class="fr">Écrivez-moi directement sur Telegram : je vous présente l'offre, les modalités et je réponds à vos questions personnellement.</span>
+      <span class="en">Message me directly on Telegram: I'll walk you through the offer and the details, and answer your questions personally.</span></div></details>
+  </section>
+
+  <!-- CTA FINAL -->
+  <div class="final">
+    <h2><span class="fr">Prêt à voir le marché avant tout le monde ?</span><span class="en">Ready to see the market before everyone else?</span></h2>
+    <p><span class="fr">Écrivez-moi, je vous réponds personnellement.</span><span class="en">Message me, I'll reply personally.</span></p>
+    <div class="cta">
+      <a class="btn main" data-link="contact" href="#" target="_blank" rel="noopener">✈️ <span class="fr">M'écrire sur Telegram</span><span class="en">Message me on Telegram</span></a>
+      <a class="btn ghost" data-link="whatsapp" href="#" target="_blank" rel="noopener">💬 WhatsApp</a>
+    </div>
+    <p class="handle">Telegram : <strong>@MANUSAMUI07</strong></p>
+  </div>
+
+  <p class="disc">
+    <span class="fr">Le trading de CFD, d'or, d'indices et de cryptomonnaies comporte un risque élevé de perte en capital. Les performances passées ne préjugent pas des performances futures. Contenu éducatif et informatif, ne constituant pas un conseil en investissement.</span>
+    <span class="en">Trading CFDs, gold, indices and cryptocurrencies carries a high risk of capital loss. Past performance is not indicative of future results. Educational and informational content only, not investment advice.</span>
+  </p>
+  <p class="copy">© First Light</p>
+</div>
+
+<script>
+/* ===== LIENS ===== */
+const LINKS = {
+  contact:    "https://t.me/MANUSAMUI07",
+  bookouvert: "https://t.me/FirstLightBook",
+  whatsapp:   "https://wa.me/66612017290"
+};
+document.querySelectorAll('[data-link]').forEach(a=>{
+  const url = LINKS[a.dataset.link];
+  if(url){ a.href = url; }
+});
+
+/* Logo : bougies en éventail autour du soleil */
+(function(){
+  const g = document.getElementById('rays'), ns='http://www.w3.org/2000/svg';
+  const heights=[12,17,14,21,25,21,14,17,12];
+  for(let i=0;i<9;i++){
+    const ang=-80+i*20, h=heights[i], r0=33;
+    const grp=document.createElementNS(ns,'g');
+    grp.setAttribute('transform',`rotate(${ang} 80 88)`);
+    const wick=document.createElementNS(ns,'line');
+    wick.setAttribute('x1',80); wick.setAttribute('x2',80);
+    wick.setAttribute('y1',88-r0+2); wick.setAttribute('y2',88-r0-h-6);
+    wick.setAttribute('stroke-width',1.6); wick.setAttribute('stroke','#E3B85A');
+    const body=document.createElementNS(ns,'rect');
+    body.setAttribute('x',76.5); body.setAttribute('width',7);
+    body.setAttribute('y',88-r0-h-1); body.setAttribute('height',h-2);
+    body.setAttribute('rx',1); body.setAttribute('fill','#E3B85A');
+    if(i%3===1){ body.setAttribute('fill','#0E1830'); body.setAttribute('stroke','#E3B85A'); body.setAttribute('stroke-width',1.5); }
+    grp.appendChild(wick); grp.appendChild(body); g.appendChild(grp);
+  }
+})();
+
+function setLang(l){
+  document.body.dataset.lang=l; document.documentElement.lang=l;
+  document.getElementById('bfr').classList.toggle('on',l==='fr');
+  document.getElementById('ben').classList.toggle('on',l==='en');
+  try{localStorage.setItem('fl-lang',l)}catch(e){}
+}
+(function(){
+  let l=null; try{l=localStorage.getItem('fl-lang')}catch(e){}
+  if(!l) l=(navigator.language||'fr').toLowerCase().startsWith('fr')?'fr':'en';
+  setLang(l);
+})();
+</script>
+</body>
+</html>
