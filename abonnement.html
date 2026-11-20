@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>First Light Premium — S'abonner</title>
+<meta name="description" content="Rejoignez First Light Premium : calls sur l'or, les indices, le Bitcoin et le pétrole, analyses et lives de trading.">
+<style>
+:root{--navy:#0E1A2B;--navy2:#16263D;--gold:#F2A93B;--cream:#FFF6E8;--ink:#1F2937;--grey:#6B7280;--line:#E5E7EB}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:#F4F5F7;overflow-x:clip}
+header{background:var(--navy);color:#fff;padding:36px 20px 70px;text-align:center}
+.logo{display:inline-flex;align-items:center;gap:12px}
+.logo b{font-size:26px;letter-spacing:.5px}
+header h1{font-size:clamp(26px,5vw,40px);line-height:1.1;margin:18px 0 8px;text-wrap:balance}
+header p{color:#C9D3E0;margin:0 auto;max-width:560px}
+main{max-width:1100px;margin:-44px auto 0;padding:0 16px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 22px 22px;position:relative;display:flex;flex-direction:column;box-shadow:0 6px 24px rgba(14,26,43,.06)}
+.card.reco{border:2px solid var(--gold);background:var(--cream)}
+.card.mentor{background:var(--navy);color:#E5E9F0;border-color:var(--navy)}
+.badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--navy);font-weight:700;font-size:12px;padding:4px 12px;border-radius:20px;white-space:nowrap}
+.mentor .badge{background:#fff}
+.name{font-weight:700;font-size:20px;color:var(--navy)}
+.mentor .name{color:var(--gold)}
+.price{font-size:38px;font-weight:800;color:var(--navy);line-height:1.1;margin-top:6px;white-space:nowrap}
+.mentor .price{color:#fff}
+.price span{font-size:16px;font-weight:400}
+.note{font-size:14px;color:var(--grey);margin-top:4px;min-height:42px}
+.mentor .note{color:#AEB9C8}
+ul{list-style:none;padding:14px 0 0;margin:14px 0 18px;border-top:1px solid var(--line);flex:1}
+.mentor ul{border-top-color:#2A3A52}
+li{padding-left:24px;position:relative;margin-bottom:9px;font-size:15px;line-height:1.4}
+li:before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:800}
+li.plus{font-weight:700}
+.pp{min-height:110px}
+.pp-fallback{font-size:13px;color:var(--grey);text-align:center;padding:10px}
+.trust{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;margin:26px 0 8px;color:var(--grey);font-size:14px}
+.trust span:before{content:"● ";color:var(--gold)}
+section{background:#fff;border-radius:16px;padding:24px 22px;margin:26px 0;border:1px solid var(--line)}
+h2{font-size:20px;color:var(--navy);margin:0 0 12px}
+details{border-top:1px solid var(--line);padding:12px 0}
+details:first-of-type{border-top:0}
+summary{cursor:pointer;font-weight:600;color:var(--navy);min-height:28px}
+details p{margin:8px 0 0;color:#374151}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;counter-reset:s}
+.step{background:#F7F8FA;border-radius:12px;padding:14px}
+.step b{display:block;color:var(--navy);margin-bottom:4px}
+.step b:before{counter-increment:s;content:counter(s) ". ";color:var(--gold)}
+footer{background:var(--navy);color:#C9D3E0;font-size:13px;text-align:center;padding:20px 16px;margin-top:30px}
+footer a{color:var(--gold)}
+/* confirmation */
+.overlay{position:fixed;inset:0;background:rgba(14,26,43,.7);display:none;align-items:center;justify-content:center;padding:16px;z-index:50}
+.overlay.on{display:flex}
+.modal{background:#fff;border-radius:16px;max-width:440px;width:100%;padding:26px 22px;text-align:center}
+.modal h3{margin:6px 0 8px;color:var(--navy);font-size:22px}
+.subid{font-family:ui-monospace,Menlo,monospace;background:var(--cream);border:1px dashed var(--gold);border-radius:8px;padding:10px;margin:12px 0;word-break:break-all;font-size:15px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 20px;border-radius:30px;font-weight:700;text-decoration:none;border:0;cursor:pointer;font-size:15px;margin:5px}
+.btn.gold{background:var(--gold);color:var(--navy)}
+.btn.ghost{background:#EEF0F3;color:var(--navy)}
+.btn:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+@media(max-width:860px){.cards{grid-template-columns:minmax(0,1fr);gap:26px;max-width:480px;margin:0 auto}.steps{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body>
+<header>
+ <div class="logo">
+  <svg width="46" height="46" viewBox="-32 -32 64 64" aria-hidden="true"><circle r="15" fill="#F2A93B"/><g stroke="#F2A93B" stroke-width="3" stroke-linecap="round"><line x1="21" x2="28"/><line x1="21" x2="28" transform="rotate(30)"/><line x1="21" x2="28" transform="rotate(60)"/><line x1="21" x2="28" transform="rotate(90)"/><line x1="21" x2="28" transform="rotate(120)"/><line x1="21" x2="28" transform="rotate(150)"/><line x1="21" x2="28" transform="rotate(180)"/><line x1="21" x2="28" transform="rotate(210)"/><line x1="21" x2="28" transform="rotate(240)"/><line x1="21" x2="28" transform="rotate(270)"/><line x1="21" x2="28" transform="rotate(300)"/><line x1="21" x2="28" transform="rotate(330)"/></g></svg>
+  <b>FIRST LIGHT</b>
+ </div>
+ <h1>Choisissez votre formule Premium</h1>
+ <p>Or, indices, Bitcoin et pétrole. Le marché, avant votre réveil.</p>
+</header>
+
+<main>
+ <div class="cards">
+  <div class="card">
+   <div class="name">Mensuel</div>
+   <div class="price">49 €<span> / mois</span></div>
+   <div class="note">Sans engagement, résiliable à tout moment.</div>
+   <ul>
+    <li>Canal Premium : calls sur l'or, les indices, le Bitcoin et le pétrole</li>
+    <li>Analyses et briefings de marché</li>
+    <li>Lives de trading</li>
+   </ul>
+   <div class="pp" id="pp-mensuel"><div class="pp-fallback">Chargement du paiement sécurisé…</div></div>
+  </div>
+
+  <div class="card reco">
+   <div class="badge">RECOMMANDÉ · 2 MOIS OFFERTS</div>
+   <div class="name">Annuel</div>
+   <div class="price">490 €<span> / an</span></div>
+   <div class="note">Soit 40,83 € par mois, au lieu de 588 € en mensuel.</div>
+   <ul>
+    <li>Tout le contenu de la formule Mensuel</li>
+    <li class="plus">Un appel d'onboarding individuel de 30 min</li>
+    <li class="plus">Un live questions-réponses chaque mois, réservé aux annuels</li>
+   </ul>
+   <div class="pp" id="pp-annuel"><div class="pp-fallback">Chargement du paiement sécurisé…</div></div>
+  </div>
+
+  <div class="card mentor">
+   <div class="badge">PLACES LIMITÉES</div>
+   <div class="name">Annuel Mentorat</div>
+   <div class="price">1 290 €<span> / an</span></div>
+   <div class="note">Réglé en 3 mensualités de 430 €.</div>
+   <ul>
+    <li>Tout le contenu de la formule Annuel</li>
+    <li class="plus">Un appel de coaching individuel de 30 min chaque mois, soit 12 par an</li>
+    <li class="plus">Un suivi personnalisé de votre plan de trading et de votre gestion du risque</li>
+   </ul>
+   <div class="pp" id="pp-mentorat"><div class="pp-fallback">Chargement du paiement sécurisé…</div></div>
+  </div>
+ </div>
+
+ <div class="trust">
+  <span>Paiement sécurisé par PayPal</span>
+  <span>Carte bancaire acceptée, même sans compte PayPal</span>
+  <span>Résiliation en un clic</span>
+ </div>
+
+ <section>
+  <h2>Comment ça se passe</h2>
+  <div class="steps">
+   <div class="step"><b>Choisissez votre formule</b>Le montant s'affiche automatiquement. Payez avec PayPal ou par carte.</div>
+   <div class="step"><b>Envoyez votre numéro</b>Après le paiement, un numéro d'abonnement s'affiche. Envoyez-le sur Telegram.</div>
+   <div class="step"><b>Rejoignez le canal</b>Vous recevez votre accès au canal Premium, généralement dans la journée.</div>
+  </div>
+ </section>
+
+ <section>
+  <h2>Questions fréquentes</h2>
+  <details><summary>Faut-il un compte PayPal ?</summary><p>Non. Le bouton de paiement par carte bancaire fonctionne sans compte PayPal.</p></details>
+  <details><summary>Comment résilier ?</summary><p>Depuis votre compte PayPal, dans Paramètres puis Paiements automatiques. Votre accès reste actif jusqu'à la fin de la période payée.</p></details>
+  <details><summary>Comment fonctionne le Mentorat en 3 fois ?</summary><p>Vous réglez 430 € par mois pendant 3 mois, puis plus rien jusqu'à la fin de l'année. Les appels de coaching s'étalent sur les 12 mois.</p></details>
+  <details><summary>Puis-je passer du mensuel à l'annuel ?</summary><p>Oui. Écrivez-nous sur Telegram et nous organisons le changement.</p></details>
+ </section>
+</main>
+
+<footer>
+ First Light · <a href="https://manusamui.github.io">manusamui.github.io</a><br>
+ Contenu éducatif. Le trading comporte un risque de perte en capital. Les performances passées ne préjugent pas des performances futures.
+</footer>
+
+<div class="overlay" id="ok" role="dialog" aria-modal="true" aria-labelledby="okt">
+ <div class="modal">
+  <svg width="48" height="48" viewBox="-32 -32 64 64" aria-hidden="true"><circle r="15" fill="#F2A93B"/></svg>
+  <h3 id="okt">Bienvenue dans First Light !</h3>
+  <p>Votre abonnement <b id="okplan"></b> est confirmé. Voici votre numéro d'abonnement :</p>
+  <div class="subid" id="okid"></div>
+  <p>Envoyez-le sur Telegram pour recevoir votre accès au canal Premium.</p>
+  <a class="btn gold" id="tg" href="#" target="_blank" rel="noopener">Recevoir mon accès sur Telegram</a>
+  <button class="btn ghost" id="copy" type="button">Copier le numéro</button>
+  <div><button class="btn ghost" id="close" type="button">Fermer</button></div>
+ </div>
+</div>
+
+<script>
+// ===== RÉGLAGES =====
+var TELEGRAM = "manusamui07"; // ton identifiant Telegram, sans le @
+var CLIENT_ID = "BAA60NfWwv9GhegrGxQOoGd28J68zhfGyKyE8FmFbdNlSRTl0Ddt0-M3blK8BzOM-QNG6yBX2DkJ0Zknc8";
+var PLANS = [
+ {el:"pp-mensuel",  id:"P-4KC40618CN934942KNMADCFI", nom:"Mensuel"},
+ {el:"pp-annuel",   id:"P-37L28964HA4916358NMADEKQ", nom:"Annuel"},
+ {el:"pp-mentorat", id:"P-3ML43986AM0581709NMADFXY", nom:"Mentorat"}
+];
+// ====================
+{
+ var ok=document.getElementById("ok");
+ function show(nom, sid){
+  document.getElementById("okplan").textContent=nom;
+  document.getElementById("okid").textContent=sid;
+  var msg=encodeURIComponent("Bonjour ! Je viens de m'abonner à First Light ("+nom+"). Mon numéro d'abonnement : "+sid);
+  document.getElementById("tg").href="https://t.me/"+TELEGRAM+"?text="+msg;
+  ok.classList.add("on");
+ }
+ document.getElementById("close").addEventListener("click",function(){ok.classList.remove("on")});
+ document.getElementById("copy").addEventListener("click",function(){
+  var b=this,t=document.getElementById("okid").textContent;
+  try{navigator.clipboard.writeText(t).then(function(){b.textContent="Copié ✓"},function(){b.textContent="Sélectionnez le numéro"})}catch(e){b.textContent="Sélectionnez le numéro"}
+ });
+ var s=document.createElement("script");
+ s.src="https://www.paypal.com/sdk/js?client-id="+CLIENT_ID+"&vault=true&intent=subscription&currency=EUR&locale=fr_FR";
+ s.setAttribute("data-sdk-integration-source","button-factory");
+ s.onload=function(){
+  PLANS.forEach(function(p){
+   var box=document.getElementById(p.el); box.innerHTML="";
+   paypal.Buttons({
+    style:{shape:"pill",color:"gold",layout:"vertical",label:"subscribe"},
+    createSubscription:function(data,actions){return actions.subscription.create({plan_id:p.id})},
+    onApprove:function(data){show(p.nom,data.subscriptionID)}
+   }).render("#"+p.el);
+  });
+ };
+ s.onerror=function(){
+  PLANS.forEach(function(p){document.getElementById(p.el).innerHTML='<div class="pp-fallback">Le paiement n\'a pas pu se charger. Rechargez la page ou contactez-nous sur Telegram.</div>'});
+ };
+ document.body.appendChild(s);
+}
+</script>
+</body>
+</html>
